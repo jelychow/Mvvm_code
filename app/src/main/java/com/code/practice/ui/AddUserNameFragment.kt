@@ -50,10 +50,11 @@ class AddUserNameFragment : Fragment() {
         }
 
         initViewModels()
-
         binding.btnSubmit.setOnClickListener {
-            var userName = binding.etInput.text.toString().trim()
-            userNameViewModel.insertUserName(UserName().apply { this.userName=userName })
+            var name = binding.etInput.text.toString().trim()
+            if (name.isNotEmpty()){
+                userNameViewModel.insertUserName(UserName().apply { this.userName=userName })
+            }
         }
 
     }
