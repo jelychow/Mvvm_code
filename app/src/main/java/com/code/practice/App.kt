@@ -2,7 +2,6 @@ package com.code.practice
 
 import android.app.Application
 import com.code.practice.database.UserNameDataBase
-import com.code.practice.database.enities.UserName
 import com.code.practice.repositories.UserNameRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob

@@ -3,11 +3,9 @@ package com.code.practice.database
 import android.content.Context
 import android.util.Log
 import androidx.room.Database
-import androidx.room.DatabaseConfiguration
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import androidx.sqlite.db.SupportSQLiteOpenHelper
 import com.code.practice.database.daos.UserNameDao
 import com.code.practice.database.enities.UserName
 import kotlinx.coroutines.CoroutineScope
@@ -51,7 +49,7 @@ abstract class UserNameDataBase : RoomDatabase() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
 
-                INSTANCE?.let { database ->
+                INSTANCE?.let {
                     scope.launch(Dispatchers.IO) {
                         Log.d(USERNAME_DATABASE_NAME, "init")
                     }
